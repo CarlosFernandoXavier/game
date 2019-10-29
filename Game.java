@@ -1,4 +1,6 @@
 
+
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -116,6 +118,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     private JComboBox<String> cb, cb1, cb2, cb3;
     private JPanel weapon, panel, panel1;
     private JFrame frame;
+    private ImageTarget image;
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -165,19 +168,15 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 
         // Initialize the ground object, players and bullets
         ground = new Ground();
+        
+        image = new OpenIconAdapter();
+        BulletFactory bulletFactory = new WinchesterFactory();
+        
+        bullet1 = bulletFactory.createBullet();
+        bullet2 = bullet1.clonar();
 
-        ImageIcon imageIcon = new ImageIcon(getClass().getResource("lu.png"));
-        bullet1 = new Bullet.Builder()
-                .x(0)
-                .y(0)
-                .imgBullet(imageIcon)
-                .width(imageIcon.getIconWidth())
-                .height(imageIcon.getIconHeight())
-                .shot(false)
-                .build();
-
-        ImageIcon imgPlayer = new ImageIcon(getClass().getResource("emoji1.png"));
-        ImageIcon imgDeadPlayer = new ImageIcon(getClass().getResource("rip.png"));
+        ImageIcon imgPlayer = image.carregarIcon("emoji1.png");
+        ImageIcon imgDeadPlayer = image.carregarIcon("rip.png");
 
         player1 = new Players.Builder()
                 .x(0)
@@ -191,16 +190,9 @@ public class Game extends JPanel implements ActionListener, KeyListener {
                 .energy(250)
                 .build();
 
-        bullet2 = new Bullet.Builder()
-                .x(0)
-                .y(0)
-                .imgBullet(imageIcon)
-                .width(imageIcon.getIconWidth())
-                .height(imageIcon.getIconHeight())
-                .shot(false)
-                .build();
+        
 
-        ImageIcon imgPlayer2 = new ImageIcon(getClass().getResource("emoji2.png"));
+        ImageIcon imgPlayer2 = image.carregarIcon("emoji2.png");
         player2 = new Players.Builder()
                 .x(1200)
                 .y(0)
@@ -227,10 +219,10 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         everySec = new Timer(1000, this);
 
         // initialize ImageIcons
-        imgBackground = new ImageIcon(getClass().getResource("backgroundart_grassland.jpg"));
-        imgInfo = new ImageIcon(getClass().getResource("image.png"));
-        line = new ImageIcon(getClass().getResource("line.png"));
-        line1 = new ImageIcon(getClass().getResource("characterline.png"));
+        imgBackground = image.carregarIcon("backgroundart_grassland.jpg");
+        imgInfo = image.carregarIcon("image.png");
+        line = image.carregarIcon("line.png");
+        line1 = image.carregarIcon("characterline.png");
 
         // Initialize lblHealth, set bounds, font, font size and text, also add to the panel
         lblHealth = new JLabel();

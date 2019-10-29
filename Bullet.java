@@ -1,4 +1,6 @@
 
+
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
@@ -32,58 +34,22 @@ public class Bullet {
     private int x, y, width, height, attack, defense, energy, explode;
     private ImageIcon imgBullet;
     private boolean shot;
-
-    /**
-     * The main constructor is used to initialize all variables in this class.
-     */
     
-    public static class Builder {
-
-        private int x;
-        private int y;
-        private ImageIcon imgBullet;
-        private int width;
-        private int height;
-        private boolean shot;
+    public Bullet(){
         
-        public Builder x(int x) {
-            this.x = x;
-            return this;
-        }
-        
-        public Builder y(int y) {
-            this.y = y;
-            return this;
-        }
-        public Builder imgBullet(ImageIcon imgBullet) {
-            this.imgBullet = imgBullet;
-            return this;
-        }
-        public Builder width(int width) {
-            this.width= width;
-            return this;
-        }
-        public Builder height(int height){
-            this.height = height;
-            return this;
-        }
-        public Builder shot(boolean shot){
-            this.shot = shot;
-            return this;
-        }
-        
-        public Bullet build() {
-            return new Bullet(this);
-        }
-    
     }
-    public Bullet(Builder builder) {
-        this.x = builder.x;
-        this.y = builder.y;
-        this.imgBullet = builder.imgBullet;
-        this.width = builder.width;
-        this.height = builder.height;
-        this.shot = builder.shot;
+
+    protected Bullet(Bullet bullet){
+        this.x = bullet.x;
+        this.y = bullet.y;
+        this.imgBullet = bullet.imgBullet;
+        this.width = bullet.width;
+        this.height = bullet.height;
+        this.shot = bullet.shot;
+    }
+    
+    public Bullet clonar(){
+        return new Bullet(this);
     }
 
     /**
