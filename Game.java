@@ -175,8 +175,8 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         bullet1 = bulletFactory.createBullet();
         bullet2 = bullet1.clonar();
 
-        ImageIcon imgPlayer = image.carregarIcon("emoji1.png");
-        ImageIcon imgDeadPlayer = image.carregarIcon("rip.png");
+        ImageIcon imgPlayer = image.carregarIcon("images/emoji1.png");
+        ImageIcon imgDeadPlayer = image.carregarIcon("images/rip.png");
 
         player1 = new Players.Builder()
                 .x(0)
@@ -192,7 +192,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 
         
 
-        ImageIcon imgPlayer2 = image.carregarIcon("emoji2.png");
+        ImageIcon imgPlayer2 = image.carregarIcon("images/emoji2.png");
         player2 = new Players.Builder()
                 .x(1200)
                 .y(0)
@@ -219,10 +219,10 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         everySec = new Timer(1000, this);
 
         // initialize ImageIcons
-        imgBackground = image.carregarIcon("backgroundart_grassland.jpg");
-        imgInfo = image.carregarIcon("image.png");
-        line = image.carregarIcon("line.png");
-        line1 = image.carregarIcon("characterline.png");
+        imgBackground = image.carregarIcon("images/backgroundart_grassland.jpg");
+        imgInfo = image.carregarIcon("images/image.png");
+        line = image.carregarIcon("images/line.png");
+        line1 = image.carregarIcon("images/characterline.png");
 
         // Initialize lblHealth, set bounds, font, font size and text, also add to the panel
         lblHealth = new JLabel();

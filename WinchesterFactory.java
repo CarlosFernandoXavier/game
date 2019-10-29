@@ -15,7 +15,7 @@ public class WinchesterFactory implements BulletFactory{
     @Override
     public Bullet createBullet() {
         Bullet bullet = new Bullet();
-        ImageIcon imageIcon = new ImageIcon(getClass().getResource("lu.png"));
+        ImageIcon imageIcon = new ImageIcon(getClass().getResource("images/lu.png"));
         bullet.setX(0);
         bullet.setY(0);
         bullet.setImgBullet(imageIcon);

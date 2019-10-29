@@ -39,7 +39,7 @@ public class Ground {
 	public Ground() {
 		
 		try {
-			this.image = ImageIO.read(getClass().getResourceAsStream("terrain1.png"));
+			this.image = ImageIO.read(getClass().getResourceAsStream("images/terrain1.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
