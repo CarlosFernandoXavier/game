@@ -1,4 +1,4 @@
-
+package game;
 
 
 import java.awt.BorderLayout;
@@ -118,7 +118,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     private JComboBox<String> cb, cb1, cb2, cb3;
     private JPanel weapon, panel, panel1;
     private JFrame frame;
-    private ImageTarget image;
+    private ImageIconTarget image;
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
